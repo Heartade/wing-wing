@@ -1,14 +1,14 @@
 import pygame as pg
-import colors
+import wingbase.colors as colors
 import sys
-import ui
+import wingbase.ui as ui
 
-import scene
-import scene_main
-import scene_teststage
-import scene_intro
-import scene_gameover
-import scene_gameclear
+import wingbase.scene as scene
+import scenes.scene_main as scene_main
+import scenes.scene_teststage as scene_teststage
+import scenes.scene_intro as scene_intro
+import scenes.scene_gameover as scene_gameover
+import scenes.scene_gameclear as scene_gameclear
 
 if __name__ == "__main__":
   pg.init()

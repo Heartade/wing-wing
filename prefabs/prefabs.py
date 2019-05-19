@@ -75,9 +75,9 @@ class Bullet(pg.sprite.Sprite): # 우선 총알 오브젝트를 만들고, 그 �
     pg.sprite.Sprite.__init__(self) # 이 줄은 필수!
     self.radius = 6
     self.SCENE = SCENE
-    self.image = pg.transform.rotate(pg.image.load('./bullet.png'), angle) # 총알 이미지를 불러오고 회전합니다!
-    self.trail_image = pg.transform.rotate(pg.image.load('./bullet_white.png'), angle) # 총알 이미지를 불러오고 회전합니다!
-    self.destroy_image = pg.image.load('./explosion1.png')
+    self.image = pg.transform.rotate(pg.image.load('./assets/bullet.png'), angle) # 총알 이미지를 불러오고 회전합니다!
+    self.trail_image = pg.transform.rotate(pg.image.load('./assets/bullet_white.png'), angle) # 총알 이미지를 불러오고 회전합니다!
+    self.destroy_image = pg.image.load('./assets/explosion1.png')
     self.rect = self.image.get_rect() # rect는 게임 오브젝트의 크기와 위치를 담습니다!
     # 위에서는 이미지에 맞춰 rect를 설정하고 있습니다.
     self.x = x # x 좌표를 정해 줍시다.
@@ -109,9 +109,9 @@ class Bullet(pg.sprite.Sprite): # 우선 총알 오브젝트를 만들고, 그 �
 class EnemyBullet(Bullet):
   def __init__(self, SCENE, x, y, speed, angle): # 인자 다섯 개를 받는 생성자예요.
     super().__init__(SCENE, x, y, speed, angle)
-    self.image = pg.transform.rotate(pg.image.load('./enemybullet.png'), angle) # 총알 이미지를 불러오고 회전합니다!
-    self.trail_image = pg.transform.rotate(pg.image.load('./bullet_white.png'), angle) # 총알 이미지를 불러오고 회전합니다!
-    self.destroy_image = pg.image.load('./explosion2.png')
+    self.image = pg.transform.rotate(pg.image.load('./assets/enemybullet.png'), angle) # 총알 이미지를 불러오고 회전합니다!
+    self.trail_image = pg.transform.rotate(pg.image.load('./assets/bullet_white.png'), angle) # 총알 이미지를 불러오고 회전합니다!
+    self.destroy_image = pg.image.load('./assets/explosion2.png')
 
 
 class Player(pg.sprite.Sprite):
@@ -120,9 +120,9 @@ class Player(pg.sprite.Sprite):
     self.SCENE = SCENE
     self.radius = 16
     self.angle = 0
-    self.original_image = pg.image.load('./player.png')
-    self.original_trail_image = pg.image.load('./player_effect.png') # 총알 이미지를 불러오고 회전합니다!
-    self.explosion_image = pg.image.load('./explosion1.png')
+    self.original_image = pg.image.load('./assets/player.png')
+    self.original_trail_image = pg.image.load('./assets/player_effect.png') # 총알 이미지를 불러오고 회전합니다!
+    self.explosion_image = pg.image.load('./assets/explosion1.png')
     self.image = pg.transform.rotate(self.original_image, self.angle)
     self.rect = self.image.get_rect()
     self.x = x
@@ -210,9 +210,9 @@ class Enemy(pg.sprite.Sprite):
     self.radius = 16
     self.angle = 0
     self.target = target
-    self.original_image = pg.image.load('./enemy.png')
-    self.original_trail_image = pg.image.load('./enemy_effect.png')
-    self.explosion_image = pg.image.load('./explosion2.png')
+    self.original_image = pg.image.load('./assets/enemy.png')
+    self.original_trail_image = pg.image.load('./assets/enemy_effect.png')
+    self.explosion_image = pg.image.load('./assets/explosion2.png')
     self.image = pg.transform.rotate(self.original_image, self.angle)
     self.rect = self.image.get_rect()
     self.x = x

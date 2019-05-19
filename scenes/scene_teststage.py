@@ -1,9 +1,9 @@
 import pygame as pg
-import colors
+import wingbase.colors as colors
 import sys
-import ui
-import scene
-import prefabs
+import wingbase.ui as ui
+import wingbase.scene as scene
+import prefabs.prefabs as prefabs
 import random
 
 class Bar(pg.sprite.Sprite):
@@ -39,7 +39,7 @@ class Scene_TestStage(scene.Scene):
   def __init__(self, WINDOW, CLOCK, FPS = 30, GROUPS = []):
     super().__init__(WINDOW, CLOCK, FPS=30, GROUPS=[])
     self.score = 0
-    self.game_font = pg.font.Font('./NotoSans-BoldItalic.ttf',24)
+    self.game_font = pg.font.Font('./assets/NotoSans-BoldItalic.ttf',24)
     self.group_enemy = pg.sprite.Group() # 적 그룹!
     self.group_enemybullets = pg.sprite.Group() # 적 총알 그룹!
     self.group_playerbullets = pg.sprite.Group() # 총알 그룹!
@@ -51,16 +51,16 @@ class Scene_TestStage(scene.Scene):
     self.groups.append(self.group_player)
     self.groups.append(self.group_overlay)
     self.player = prefabs.Player(self,180,240)
-    bar_image = pg.image.load('./bar.png')
-    bar2_image = pg.image.load('./bar2.png')
-    overlay_image = pg.image.load('./overlay.png')
-    overlay2_image = pg.image.load('./overlay2.png')
-    edge_image = pg.image.load('./bar_edge.png')
-    edge2_image = pg.image.load('./bar2_edge.png')
+    bar_image = pg.image.load('./assets/bar.png')
+    bar2_image = pg.image.load('./assets/bar2.png')
+    overlay_image = pg.image.load('./assets/overlay.png')
+    overlay2_image = pg.image.load('./assets/overlay2.png')
+    edge_image = pg.image.load('./assets/bar_edge.png')
+    edge2_image = pg.image.load('./assets/bar2_edge.png')
     animation_image = []
-    animation_image.append(pg.image.load('./bar_anim_1.png'))
-    animation_image.append(pg.image.load('./bar_anim_2.png'))
-    animation_image.append(pg.image.load('./bar_anim_3.png'))
+    animation_image.append(pg.image.load('./assets/bar_anim_1.png'))
+    animation_image.append(pg.image.load('./assets/bar_anim_2.png'))
+    animation_image.append(pg.image.load('./assets/bar_anim_3.png'))
     bar_rect = bar_image.get_rect()
     bar_rect.x = 52
     bar_rect.y = 16

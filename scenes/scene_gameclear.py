@@ -1,27 +1,27 @@
 import pygame as pg
-import colors
+import wingbase.colors as colors
 import sys
-import ui
-import scene
+import wingbase.ui as ui
+import wingbase.scene as scene
 
 class Scene_GameClear(scene.Scene):
   def __init__(self, WINDOW, CLOCK, FPS = 30, GROUPS = [], score = 0):
     super().__init__(WINDOW, CLOCK, FPS=30, GROUPS=[])
     try:
-      f = open('./highscore.txt',mode='r')
+      f = open('./assets/highscore.txt',mode='r')
       s = int(f.readline())
       if s < score:
         f.close()
-        f = open('./highscore.txt',mode='w')
+        f = open('./assets/highscore.txt',mode='w')
         f.write(str(score))
     except:
-      f = open('./highscore.txt',mode='w')
+      f = open('./assets/highscore.txt',mode='w')
       f.write(str(score))
-    self.game_font = pg.font.Font('NotoSans-BoldItalic.ttf',24) 
+    self.game_font = pg.font.Font('./assets/NotoSans-BoldItalic.ttf',24) 
     self.score = score
     self.group_button = pg.sprite.Group()
     self.groups.append(self.group_button)
-    self.tomainmenubutton = ui.Button(180,240,'./clearscreen.png',self.on_button_click)
+    self.tomainmenubutton = ui.Button(180,240,'./assets/clearscreen.png',self.on_button_click)
     self.score_text_surface = self.game_font.render("SCORE: "+str(score), True, pg.Color(255,255,255))
     self.score_text_rect = self.score_text_surface.get_rect()
     self.score_text_rect.center = (180,260)

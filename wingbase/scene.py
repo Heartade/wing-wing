@@ -1,5 +1,5 @@
 import pygame as pg
-import colors
+import wingbase.colors as colors
 import sys
 
 class Scene():

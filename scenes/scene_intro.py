@@ -1,8 +1,8 @@
 import pygame as pg
-import colors
+import wingbase.colors as colors
 import sys
-import ui
-import scene
+import wingbase.ui as ui
+import wingbase.scene as scene
 
 class Scene_Intro(scene.Scene):
   def __init__(self, WINDOW, CLOCK, FPS = 30, GROUPS = []):
@@ -11,12 +11,12 @@ class Scene_Intro(scene.Scene):
     self.groups.append(self.group_button)
     self.story = []
     self.story_index = 0
-    self.story.append(ui.Button(180,240,'./story0.png',self.next_story))
-    self.story.append(ui.Button(180,240,'./story1.png',self.next_story))
-    self.story.append(ui.Button(180,240,'./story2.png',self.next_story))
-    self.story.append(ui.Button(180,240,'./story3.png',self.next_story))
-    self.story.append(ui.Button(180,240,'./story4.png',self.next_story))
-    self.story.append(ui.Button(180,240,'./story5.png',self.next_story))
+    self.story.append(ui.Button(180,240,'./assets/story0.png',self.next_story))
+    self.story.append(ui.Button(180,240,'./assets/story1.png',self.next_story))
+    self.story.append(ui.Button(180,240,'./assets/story2.png',self.next_story))
+    self.story.append(ui.Button(180,240,'./assets/story3.png',self.next_story))
+    self.story.append(ui.Button(180,240,'./assets/story4.png',self.next_story))
+    self.story.append(ui.Button(180,240,'./assets/story5.png',self.next_story))
     self.group_button.add(self.story[0])
     self.to_next_stage = False
   def next_story(self, arg):
